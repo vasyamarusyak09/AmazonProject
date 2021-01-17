@@ -27,4 +27,8 @@ public class HomePage extends Page {
     public BestSellersPage navigateToBestSellersPage() throws Exception {
         return header.clickOnBestSellersLink();
     }
+
+    public NewReleasesPage navigateToNewReleasesPage() throws Exception {
+        return header.clickOnNewReleasesLink();
+    }
 }

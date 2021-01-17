@@ -4,6 +4,7 @@ import com.atqa2020.framework.universalelements.Footer;
 import com.atqa2020.framework.universalelements.Header;
 import com.atqa2020.pages.CustomerServicePage;
 import com.atqa2020.pages.FindJobsPage;
+import com.atqa2020.pages.NewReleasesPage;
 import com.atqa2020.pages.Page;
 import org.openqa.selenium.By;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -42,5 +43,9 @@ public class PageNavigator {
 
     public FindJobsPage navigateToFindJobsPage() throws Exception {
         return footer.navigateToFindJobsPage();
+    }
+
+    public NewReleasesPage navigateToNewReleasesPage() throws Exception {
+        return header.clickOnNewReleasesLink();
     }
 }
