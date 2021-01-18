@@ -4,6 +4,8 @@ import com.atqa2020.pages.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
+import java.util.concurrent.TimeUnit;
+
 public class Header extends GeneralElements {
 
     protected RemoteWebDriver driver;
@@ -13,6 +15,7 @@ public class Header extends GeneralElements {
     private String bestSellersLinkLocator = "//*[@data-csa-c-slot-id='nav_cs_1']";
     private String allElementLinklocator = "//*[@id='nav-hamburger-menu']";
     private String newReleasesLinkLocator = "//*[@class='hmenu hmenu-visible']/li[3]";
+
 
 
     public Header(RemoteWebDriver driver) {
@@ -42,4 +45,5 @@ public class Header extends GeneralElements {
         driver.findElement(By.xpath(newReleasesLinkLocator)).click();
         return PageFactory.newPage(driver, NewReleasesPage.class);
     }
+
 }

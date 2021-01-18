@@ -4,8 +4,8 @@ import com.atqa2020.framework.universalelements.Footer;
 import com.atqa2020.framework.universalelements.Header;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
-public class HomePage extends Page {
 
+public class HomePage extends Page {
     private Header header;
     private Footer footer;
 
@@ -28,7 +28,12 @@ public class HomePage extends Page {
         return header.clickOnBestSellersLink();
     }
 
-    public NewReleasesPage navigateToNewReleasesPage() throws Exception {
-        return header.clickOnNewReleasesLink();
+    public Header openLeftSideMenu() throws Exception {
+        return header.navigateToLeftSideMenuAll();
     }
+
+    public NewReleasesPage navigateToNewReleasesPage() throws Exception {
+        return header.navigateToNewReleasesPage(NewReleasesPage.class);
+    }
+
 }

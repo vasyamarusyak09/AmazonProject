@@ -1,15 +1,12 @@
 package com.atqa2020.journeys;
 
 import com.atqa2020.BaseTest;
-import com.atqa2020.framework.dictionary.AmazonURLs;
-import com.atqa2020.framework.utils.DataProvider;
-import com.atqa2020.framework.utils.Helper;
+import com.atqa2020.framework.universalelements.Header;
 import com.atqa2020.listeners.TestListener;
 import com.atqa2020.pages.HomePage;
 import com.atqa2020.pages.NewReleasesPage;
 import org.openqa.selenium.By;
 import org.testng.Assert;
-import org.testng.ITestResult;
 import org.testng.annotations.*;
 
 import java.util.ArrayList;
@@ -18,9 +15,9 @@ import java.util.ArrayList;
 public class FinalAssignmentTests extends BaseTest {
 
     private String acceptCookiesButtonLocator = "//input[@id='sp-cc-accept']";
+    private Header header;
     private HomePage homePage;
-    private ArrayList<String> results = new ArrayList<>();
-    public NewReleasesPage newReleasesPage;
+    public NewReleasesPage newReleasesPage ;
 
 
     @BeforeMethod(alwaysRun = true)
@@ -31,17 +28,11 @@ public class FinalAssignmentTests extends BaseTest {
         homePage = new HomePage(driver);
     }
 
-    @Test
+    @Test(groups = "main1", suiteName = "ui")
     public void newReleasesComparingTest() throws Exception {
-
+        header = homePage.openLeftSideMenu();
         newReleasesPage = homePage.navigateToNewReleasesPage();
-        //newReleasesPage = pageNavigator.navigateToNewReleasesPage();
-        //newReleasesPage.getAllLeftMenuNames();
-        //newReleasesPage = homePage.getAllNamesItemList();
+        Assert.assertTrue(newReleasesPage.isThereNewReleasesItemsInAnyDepartmentList(), "List of any department titles does not include all hot new releases titles");
 
-//        String AllLeftMenuNames = newReleasesPage.getAllLeftMenuNames();
-//         String AllNamesItemList = newReleasesPage.getAllNamesItemList();
-
-        Assert.assertTrue(true, "Left Menu List Does not contain menu list");
     }
 }

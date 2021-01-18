@@ -45,7 +45,4 @@ public class PageNavigator {
         return footer.navigateToFindJobsPage();
     }
 
-    public NewReleasesPage navigateToNewReleasesPage() throws Exception {
-        return header.clickOnNewReleasesLink();
-    }
 }
